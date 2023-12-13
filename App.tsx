@@ -1,11 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+/* eslint-disable prettier/prettier */
+import * as React from 'react';
+
+import { StyleSheet, View, Text } from 'react-native'
+import { add, sub, mul, div, answer } from 'react-native-awesome-calculator'
+
+const x = 12
+const y = 2
+
+const sum = add(x, y)
+const diff = sub(x, y)
+const prod = mul(x, y)
+const quot = div(x, y)
+const ans = answer();
+const doubleAns = answer() * 2
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>Sum: {sum}</Text>
+      <Text>Difference: {diff}</Text>
+      <Text>Product: {prod}</Text>
+      <Text>Quotient: {quot}</Text>
+      <Text>Answer: {ans}</Text>
+      <Text>Double answer: {doubleAns}</Text>
     </View>
   );
 }
@@ -13,8 +30,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  box: {
+    width: 60,
+    height: 60,
+    marginVertical: 20,
   },
 });
